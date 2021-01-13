@@ -26,7 +26,7 @@ describe TicTacToe do
     end
   end
 
-  describe '#player1won?' do
+  describe '#won?' do
     context 'when player1 has won the game for a column' do
       it 'returns true' do
         tic_tac_toe.player1move(0, 0)
@@ -39,6 +39,13 @@ describe TicTacToe do
         tic_tac_toe.player1move(0, 1)
         tic_tac_toe.player1move(1, 1)
         tic_tac_toe.player1move(2, 1)
+        expect(tic_tac_toe.won?).to eq('Player1 has won the game')
+      end
+
+      it 'returns true for a row' do
+        tic_tac_toe.player1move(0, 0)
+        tic_tac_toe.player1move(0, 1)
+        tic_tac_toe.player1move(0, 2)
         expect(tic_tac_toe.won?).to eq('Player1 has won the game')
       end
     end
