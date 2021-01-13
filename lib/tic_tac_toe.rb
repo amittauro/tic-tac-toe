@@ -9,6 +9,11 @@ class TicTacToe
     @board
   end
 
+  def player2move(row, column)
+    @board[row][column] = 'o'
+    @board
+  end
+
   private
 
   def create_board
