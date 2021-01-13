@@ -29,23 +29,17 @@ describe TicTacToe do
   describe '#won?' do
     context 'when player1 has won the game for a column' do
       it 'returns true' do
-        tic_tac_toe.player1move(0, 0)
-        tic_tac_toe.player1move(1, 0)
-        tic_tac_toe.player1move(2, 0)
+        3.times { |row| tic_tac_toe.player1move(row, 0)}
         expect(tic_tac_toe.won?).to eq('Player1 has won the game')
       end
 
       it 'returns true for a different column' do
-        tic_tac_toe.player1move(0, 1)
-        tic_tac_toe.player1move(1, 1)
-        tic_tac_toe.player1move(2, 1)
+        3.times { |row| tic_tac_toe.player1move(row, 1)}
         expect(tic_tac_toe.won?).to eq('Player1 has won the game')
       end
 
       it 'returns true for a row' do
-        tic_tac_toe.player1move(0, 0)
-        tic_tac_toe.player1move(0, 1)
-        tic_tac_toe.player1move(0, 2)
+        3.times { |column| tic_tac_toe.player1move(0, column)}
         expect(tic_tac_toe.won?).to eq('Player1 has won the game')
       end
     end
