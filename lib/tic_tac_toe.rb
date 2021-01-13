@@ -32,6 +32,22 @@ class TicTacToe
   end
 
   def player2_won?
+    any_column_won_2? || any_row_won_2?
+  end
+
+  def any_row_won_2?
+    won = false
+    3.times do |row|
+      won = true if row_won_2?(row)
+    end
+    won
+  end
+
+  def row_won_2?(row)
+    board[row][0] == 'o' and board[row][1] == 'o' and board[row][2] == 'o'
+  end
+
+  def any_column_won_2?
     won = false
     3.times do |column|
       won = true if column_won_2?(column)

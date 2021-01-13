@@ -86,21 +86,21 @@ describe TicTacToe do
         3.times { |row| tic_tac_toe.player2move(row, 2)}
         expect(tic_tac_toe.won?).to eq('Player2 has won the game')
       end
-      #
-      # it 'returns player2 has won for first row' do
-      #   3.times { |column| tic_tac_toe.player2move(0, column)}
-      #   expect(tic_tac_toe.won?).to eq('Player2 has won the game')
-      # end
-      #
-      # it 'returns player2 has won for second row' do
-      #   3.times { |column| tic_tac_toe.player2move(1, column)}
-      #   expect(tic_tac_toe.won?).to eq('Player2 has won the game')
-      # end
-      #
-      # it 'returns player2 has won for third row' do
-      #   3.times { |column| tic_tac_toe.player2move(2, column)}
-      #   expect(tic_tac_toe.won?).to eq('Player2 has won the game')
-      # end
+
+      it 'returns player2 has won for first row' do
+        3.times { |column| tic_tac_toe.player2move(0, column)}
+        expect(tic_tac_toe.won?).to eq('Player2 has won the game')
+      end
+
+      it 'returns player2 has won for second row' do
+        3.times { |column| tic_tac_toe.player2move(1, column)}
+        expect(tic_tac_toe.won?).to eq('Player2 has won the game')
+      end
+
+      it 'returns player2 has won for third row' do
+        3.times { |column| tic_tac_toe.player2move(2, column)}
+        expect(tic_tac_toe.won?).to eq('Player2 has won the game')
+      end
       #
       # it 'returns player2 has won for first diagonal' do
       #   3.times { |i| tic_tac_toe.player2move(i, i)}
