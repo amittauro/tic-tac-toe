@@ -15,7 +15,18 @@ class App
       if input == 'quit'
         break
       end
-      tic_tac_toe.player1move(input[0].to_i, input[2].to_i)
+      tic_tac_toe.player1move(row(input), column(input))
     end
   end
+
+  private
+
+  def row(input)
+    input[0].to_i
+  end
+
+  def column(input)
+    input[2].to_i
+  end
+
 end
