@@ -21,7 +21,7 @@ class TicTacToe
     board
   end
 
-  def won?
+  def won
     if player1.won?(board)
       result = 'Player1 has won the game'
     elsif player2.won?(board)
