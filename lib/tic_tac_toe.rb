@@ -27,6 +27,7 @@ class TicTacToe
     3.times do |row|
       return true if row_won?(row)
     end
+    diagonal_won?
   end
 
   private
@@ -41,5 +42,10 @@ class TicTacToe
 
   def row_won?(row)
     board[row][0] == 'x' and board[row][1] == 'x' and board[row][2] == 'x'
+  end
+
+  def diagonal_won?
+    (board[0][0] == 'x' and board[1][1] == 'x' and board[2][2]) == 'x' || (
+      board[2][0] == 'x' and board[1][1] == 'x' and board[0][2] == 'x')
   end
 end

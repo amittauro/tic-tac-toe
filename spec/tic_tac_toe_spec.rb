@@ -57,6 +57,18 @@ describe TicTacToe do
         3.times { |column| tic_tac_toe.player1move(2, column)}
         expect(tic_tac_toe.won?).to eq('Player1 has won the game')
       end
+
+      it 'returns true for diagonal' do
+        3.times { |i| tic_tac_toe.player1move(i, i)}
+        expect(tic_tac_toe.won?).to eq('Player1 has won the game')
+      end
+
+      it 'returns true foranother diagonal' do
+        tic_tac_toe.player1move(2, 0)
+        tic_tac_toe.player1move(1, 1)
+        tic_tac_toe.player1move(0, 2)
+        expect(tic_tac_toe.won?).to eq('Player1 has won the game')
+      end
     end
   end
 end
