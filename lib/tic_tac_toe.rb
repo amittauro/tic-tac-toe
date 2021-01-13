@@ -1,17 +1,20 @@
 class TicTacToe
 
-  attr_reader :board
+  attr_reader :board, :moves
 
   def initialize
     @board = create_board
+    @moves = 0
   end
 
   def player1move(row, column)
+    @moves += 1
     board[row][column] = 'x'
     board
   end
 
   def player2move(row, column)
+    @moves += 1
     board[row][column] = 'o'
     board
   end
@@ -23,6 +26,10 @@ class TicTacToe
       result = 'Player2 has won the game'
     end
     result
+  end
+
+  def over
+    return 'the game is over' if moves == 9
   end
 
   private
