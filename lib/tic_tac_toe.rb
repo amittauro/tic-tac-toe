@@ -1,8 +1,10 @@
 class TicTacToe
 
-  attr_reader :board, :moves
+  attr_reader :board, :moves, :player1, :player2
 
-  def initialize
+  def initialize(player1 = Player1.new, player2 = Player2.new)
+    @player1 = player1
+    @player2 = player2
     @board = create_board
     @moves = 0
   end
@@ -20,7 +22,7 @@ class TicTacToe
   end
 
   def won?
-    if player1_won?
+    if player1.won?(board)
       result = 'Player1 has won the game'
     elsif player2_won?
       result = 'Player2 has won the game'
