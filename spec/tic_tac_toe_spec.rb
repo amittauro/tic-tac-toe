@@ -38,8 +38,23 @@ describe TicTacToe do
         expect(tic_tac_toe.won?).to eq('Player1 has won the game')
       end
 
+      it 'returns true for a different column' do
+        3.times { |row| tic_tac_toe.player1move(row, 2)}
+        expect(tic_tac_toe.won?).to eq('Player1 has won the game')
+      end
+
       it 'returns true for a row' do
         3.times { |column| tic_tac_toe.player1move(0, column)}
+        expect(tic_tac_toe.won?).to eq('Player1 has won the game')
+      end
+
+      it 'returns true for a different row' do
+        3.times { |column| tic_tac_toe.player1move(1, column)}
+        expect(tic_tac_toe.won?).to eq('Player1 has won the game')
+      end
+
+      it 'returns true for a different row' do
+        3.times { |column| tic_tac_toe.player1move(2, column)}
         expect(tic_tac_toe.won?).to eq('Player1 has won the game')
       end
     end
