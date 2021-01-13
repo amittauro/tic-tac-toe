@@ -10,12 +10,19 @@ class App
 
   def run
     input = nil
+    players = [1, 2]
     while input != 'quit'
+      player = players[0]
       input = gets.chomp
       if input == 'quit'
         break
       end
-      tic_tac_toe.player1move(row(input), column(input))
+      if player == 1
+        tic_tac_toe.player1move(row(input), column(input))
+      else
+        tic_tac_toe.player2move(row(input), column(input))
+      end
+      players.reverse!
     end
   end
 

@@ -12,6 +12,13 @@ describe App do
         expect(tic_tac_toe).to receive(:player1move).with(0, 0)
         app.run
       end
+
+      it 'gets the player2 move after player1 move' do
+        allow(app).to receive(:gets).and_return('0 0', '1 1', 'quit')
+        allow(tic_tac_toe).to receive(:player1move)
+        expect(tic_tac_toe).to receive(:player2move).with(1, 1)
+        app.run
+      end
     end
   end
 end
