@@ -11,3 +11,5 @@ gem "rspec", "~> 3.10"
 gem 'rubocop', require: false
 
 gem 'simplecov', require: false, group: :test
+
+gem "pry", "~> 0.13.1"

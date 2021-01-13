@@ -17,7 +17,12 @@ class TicTacToe
   end
 
   def won?
-    return 'Player1 has won the game' if player1_won?
+    if player1_won?
+      result = 'Player1 has won the game'
+    elsif player2_won?
+      result = 'Player2 has won the game'
+    end
+    result
   end
 
   private
@@ -26,24 +31,40 @@ class TicTacToe
     Array.new(3, nil).map{ |row| Array.new(3, nil) }
   end
 
+  def player2_won?
+    won = false
+    3.times do |column|
+      won = true if column_won_2?(column)
+    end
+    won
+  end
+
   def player1_won?
     any_column_won? || any_row_won? || any_diagonal_won?
   end
 
   def any_column_won?
+    won = false
     3.times do |column|
-      return true if column_won?(column)
+      won = true if column_won?(column)
     end
+    won
   end
 
   def any_row_won?
+    won = false
     3.times do |row|
-      return true if row_won?(row)
+      won = true if row_won?(row)
     end
+    won
   end
 
   def column_won?(column)
     board[0][column] == 'x' and board[1][column] == 'x' and board[2][column] == 'x'
+  end
+
+  def column_won_2?(column)
+    board[0][column] == 'o' and board[1][column] == 'o' and board[2][column] == 'o'
   end
 
   def row_won?(row)
