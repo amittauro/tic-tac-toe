@@ -32,14 +32,14 @@ describe TicTacToe do
         tic_tac_toe.player1move(0, 0)
         tic_tac_toe.player1move(1, 0)
         tic_tac_toe.player1move(2, 0)
-        expect(tic_tac_toe.player1won?).to eq(true)
+        expect(tic_tac_toe.won?).to eq('Player1 has won the game')
       end
 
       it 'returns true for a different column' do
         tic_tac_toe.player1move(0, 1)
         tic_tac_toe.player1move(1, 1)
         tic_tac_toe.player1move(2, 1)
-        expect(tic_tac_toe.player1won?).to eq(true)
+        expect(tic_tac_toe.won?).to eq('Player1 has won the game')
       end
     end
   end

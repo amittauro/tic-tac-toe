@@ -16,7 +16,11 @@ class TicTacToe
     board
   end
 
-  def player1won?
+  def won?
+    return 'Player1 has won the game' if player1_won?
+  end
+
+  def player1_won?
     3.times do |column|
       return true if column_won?(column)
     end
