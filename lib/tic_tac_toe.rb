@@ -32,7 +32,7 @@ class TicTacToe
   end
 
   def player2_won?
-    any_column_won_2? || any_row_won_2?
+    any_column_won_2? || any_row_won_2? || any_diagonal_won_2?
   end
 
   def any_row_won_2?
@@ -90,5 +90,10 @@ class TicTacToe
   def any_diagonal_won?
     (board[0][0] == 'x' and board[1][1] == 'x' and board[2][2]) == 'x' || (
       board[2][0] == 'x' and board[1][1] == 'x' and board[0][2] == 'x')
+  end
+
+  def any_diagonal_won_2?
+    (board[0][0] == 'o' and board[1][1] == 'o' and board[2][2]) == 'o' || (
+      board[2][0] == 'o' and board[1][1] == 'o' and board[0][2] == 'o')
   end
 end

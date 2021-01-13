@@ -101,18 +101,18 @@ describe TicTacToe do
         3.times { |column| tic_tac_toe.player2move(2, column)}
         expect(tic_tac_toe.won?).to eq('Player2 has won the game')
       end
-      #
-      # it 'returns player2 has won for first diagonal' do
-      #   3.times { |i| tic_tac_toe.player2move(i, i)}
-      #   expect(tic_tac_toe.won?).to eq('Player2 has won the game')
-      # end
-      #
-      # it 'rreturns player2move has won for second diagonal' do
-      #   tic_tac_toe.player2move(2, 0)
-      #   tic_tac_toe.player2move(1, 1)
-      #   tic_tac_toe.player2move(0, 2)
-      #   expect(tic_tac_toe.won?).to eq('Player2 has won the game')
-      # end
+      
+      it 'returns player2 has won for first diagonal' do
+        3.times { |i| tic_tac_toe.player2move(i, i)}
+        expect(tic_tac_toe.won?).to eq('Player2 has won the game')
+      end
+
+      it 'rreturns player2move has won for second diagonal' do
+        tic_tac_toe.player2move(2, 0)
+        tic_tac_toe.player2move(1, 1)
+        tic_tac_toe.player2move(0, 2)
+        expect(tic_tac_toe.won?).to eq('Player2 has won the game')
+      end
     end
   end
 end
