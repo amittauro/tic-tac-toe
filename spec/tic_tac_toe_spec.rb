@@ -32,7 +32,14 @@ describe TicTacToe do
   describe '#won?' do
     context 'when checking to see if a player has won the game' do
       it 'calls upon the player1 class' do
+        allow(player2).to receive(:won?)
         expect(player1).to receive(:won?).with(tic_tac_toe.board)
+        tic_tac_toe.won?
+      end
+
+      it 'calls upon the player2 class won method' do
+        allow(player1).to receive(:won?)
+        expect(player2).to receive(:won?).with(tic_tac_toe.board)
         tic_tac_toe.won?
       end
     end

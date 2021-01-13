@@ -24,7 +24,7 @@ class TicTacToe
   def won?
     if player1.won?(board)
       result = 'Player1 has won the game'
-    elsif player2_won?
+    elsif player2.won?(board)
       result = 'Player2 has won the game'
     end
     result
