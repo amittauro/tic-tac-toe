@@ -1,4 +1,5 @@
 require 'pry'
+require_relative 'helper_methods'
 require 'simplecov'
 SimpleCov.start
 
