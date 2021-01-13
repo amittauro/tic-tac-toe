@@ -17,12 +17,14 @@ class TicTacToe
   end
 
   def player1won?
-    board[0][0] == 'x' and board[1][0] == 'x' and board[2][0] == 'x'
+    3.times do |column|
+      return true if board[0][column] == 'x' and board[1][column] == 'x' and board[2][column] == 'x'
+    end
   end
 
   private
 
   def create_board
     Array.new(3, nil).map{ |row| Array.new(3, nil) }
-  end
+  end    
 end
