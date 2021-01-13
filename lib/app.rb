@@ -17,6 +17,10 @@ class App
       if input == 'quit'
         break
       end
+      if player1.won?
+        puts 'player1 has won the game'
+        break
+      end
       if player == 1
         tic_tac_toe.player1move(row(input), column(input))
       else
