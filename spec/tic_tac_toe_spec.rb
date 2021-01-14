@@ -17,6 +17,18 @@ describe TicTacToe do
           ]
         )
       end
+
+      it 'makes a move for player 2 after player 1' do
+        tic_tac_toe.move('1 1')
+        tic_tac_toe.move('0 0')
+        expect(tic_tac_toe.board).to eq(
+          [
+            ['o', nil, nil],
+            [nil, 'x', nil],
+            [nil, nil, nil]
+          ]
+        )
+      end
     end
   end
 end
