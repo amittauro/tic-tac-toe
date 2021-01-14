@@ -19,7 +19,8 @@ class App
         puts "you quit the game\n"
         break
       end
-      break unless tic_tac_toe.move(input)
+      tic_tac_toe.move(input)
+      break if tic_tac_toe.game_over?
     end
     puts 'game over'
   end

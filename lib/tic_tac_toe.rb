@@ -13,13 +13,13 @@ class TicTacToe
   end
 
   def move(input)
-    return true if !parser.valid?(input) || field_taken?(input)
+    return 'invalid input or field taken try again' if !parser.valid?(input) || field_taken?(input)
 
     player_makes_move(input)
+  end
 
-    return false if game_over?
-
-    true
+  def game_over?
+    player1.won?(board) || player2.won?(board) || all_fields_taken?
   end
 
   def show_board
@@ -52,10 +52,6 @@ class TicTacToe
 
   def all_fields_taken?
     moves == 9
-  end
-
-  def game_over?
-    player1.won?(board) || player2.won?(board) || all_fields_taken?
   end
 
   def field_taken?(input)

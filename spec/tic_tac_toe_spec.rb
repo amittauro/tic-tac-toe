@@ -31,10 +31,6 @@ describe TicTacToe do
         )
       end
 
-      it 'returns true after moves are made' do
-        expect(tic_tac_toe.move('1 1')).to eq(true)
-      end
-
       it 'doesnt move if field is taken' do
         tic_tac_toe.move('1 1')
         tic_tac_toe.move('1 1')
@@ -57,7 +53,8 @@ describe TicTacToe do
         tic_tac_toe.move('1 1')
         tic_tac_toe.move('2 0')
         tic_tac_toe.move('2 1')
-        expect(tic_tac_toe.move('2 2')).to eq(false)
+        tic_tac_toe.move('2 2')
+        expect(tic_tac_toe.game_over?).to eq(true)
       end
     end
 
@@ -94,19 +91,19 @@ describe TicTacToe do
       it 'checks the game for player1 or player2 winning' do
         expect(player1).to receive(:won?).with(tic_tac_toe.board)
         expect(player2).to receive(:won?).with(tic_tac_toe.board)
-        tic_tac_toe.move('0 0')
+        tic_tac_toe.game_over?
       end
 
-      it 'returns false if player1 wins' do
+      it 'returns true if player1 wins' do
         allow(player1).to receive(:won?).and_return(true)
         allow(player2).to receive(:won?).and_return(false)
-        expect(tic_tac_toe.move('0 0')).to eq(false)
+        expect(tic_tac_toe.game_over?).to eq(true)
       end
 
-      it 'returns false if player2 wins' do
+      it 'returns true if player2 wins' do
         allow(player1).to receive(:won?).and_return(false)
         allow(player2).to receive(:won?).and_return(true)
-        expect(tic_tac_toe.move('0 0')).to eq(false)
+        expect(tic_tac_toe.game_over?).to eq(true)
       end
     end
   end

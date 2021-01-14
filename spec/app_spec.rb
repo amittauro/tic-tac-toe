@@ -3,7 +3,7 @@ require './lib/app'
 describe App do
   describe '#run' do
     context 'when moves are made' do
-      let(:tic_tac_toe) { double('tic_tac_toe', move: true) }
+      let(:tic_tac_toe) { double('tic_tac_toe', move: nil, game_over?: false) }
       let(:app) { App.new(tic_tac_toe) }
       it 'takes player input until user types quit' do
         allow(app).to receive(:gets).and_return('0 0', 'quit')
@@ -12,7 +12,7 @@ describe App do
     end
 
     context 'when game is over' do
-      let(:tic_tac_toe) { double('tic_tac_toe', move: false) }
+      let(:tic_tac_toe) { double('tic_tac_toe', move: nil, game_over?: true) }
       let(:app) { App.new(tic_tac_toe) }
       it 'stops the game when its over' do
         allow(app).to receive(:gets).and_return('0 0')
