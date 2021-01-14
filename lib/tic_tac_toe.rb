@@ -23,6 +23,8 @@ class TicTacToe
       player2move(row(input), column(input))
       @player = 1
     end
+
+    return false if game_over?
     true
   end
 
@@ -52,6 +54,10 @@ class TicTacToe
   end
 
   private
+
+  def game_over?
+    player1.won?(board) || player2.won?(board) || moves == 9
+  end
 
   def field_taken?(input)
     if board[row(input)][column(input)] != nil
