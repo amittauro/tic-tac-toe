@@ -7,9 +7,12 @@ class App
   end
 
   def run
+    puts "type ? for help"
     while true
       input = gets.chomp
       case input
+      when '?'
+        get_help
       when 'quit'
         puts "you quit the game\n"
         break
@@ -17,5 +20,16 @@ class App
       break unless tic_tac_toe.move(input)
     end
     puts 'game over'
+  end
+
+  private
+
+  def get_help
+    ['This is a game of tic-tac-toe',
+    'The first row is row 0 and the first column is column 0',
+    'To input into the top left field, type: 0 0',
+    'To input into the bottom right field, type: 2 2',
+    'Type quit to exit the game',
+    ].join("\n")
   end
 end

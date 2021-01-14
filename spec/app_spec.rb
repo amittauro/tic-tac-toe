@@ -7,7 +7,7 @@ describe App do
       let(:app) { App.new(tic_tac_toe) }
       it 'takes player input until user types quit' do
         allow(app).to receive(:gets).and_return('0 0', 'quit')
-        expect { app.run }.to output("you quit the game\ngame over\n").to_stdout
+        expect { app.run }.to output("type ? for help\nyou quit the game\ngame over\n").to_stdout
       end
     end
 
@@ -16,7 +16,7 @@ describe App do
       let(:app) { App.new(tic_tac_toe) }
       it 'stops the game when its over' do
         allow(app).to receive(:gets).and_return('0 0')
-        expect { app.run }.to output("game over\n").to_stdout
+        expect { app.run }.to output("type ? for help\ngame over\n").to_stdout
       end
     end
   end

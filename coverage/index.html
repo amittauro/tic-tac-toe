@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-14T11:11:12+00:00">2021-01-14T11:11:12+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-14T11:16:21+00:00">2021-01-14T11:16:21+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.62%
+  98.89%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.7
+         3.65
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>265</b> relevant lines,
-    <span class="green"><b>264</b> lines covered</span> and
-    <span class="red"><b>1</b> lines missed. </span>
+    <b>270</b> relevant lines,
+    <span class="green"><b>267</b> lines covered</span> and
+    <span class="red"><b>3</b> lines missed. </span>
     (<span class="green">
-  99.62%
+  98.89%
 </span>
 )
   </div>
@@ -72,12 +72,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#bb7a1adb55ef8b4b59188e30791f2c7dec3b7c0e" class="src_link" title="lib/app.rb">lib/app.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.67</td>
+            <td class="yellow strong cell--number t-file__coverage">88.24 %</td>
+            <td class="cell--number">35</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">1.41</td>
             
           </tr>
         
@@ -201,8 +201,8 @@
   <div class="header">
     <h3>lib/app.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="yellow">
+  88.24%
 </span>
 
       lines covered
@@ -211,9 +211,9 @@
     
 
     <div class="t-line-summary">
-      <b>12</b> relevant lines.
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>17</b> relevant lines.
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
 
     
@@ -329,18 +329,18 @@
 
             
 
-            <code class="ruby">    while true</code>
+            <code class="ruby">    puts &quot;type ? for help&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="11">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="2" data-linenumber="11">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">      input = gets.chomp</code>
+            <code class="ruby">    while true</code>
           </li>
         </div>
       
@@ -351,40 +351,40 @@
 
             
 
+            <code class="ruby">      input = gets.chomp</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="13">
+            <span class="hits">3</span>
+            
+
+            
+
             <code class="ruby">      case input</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
             
 
-            <code class="ruby">      when &#39;quit&#39;</code>
+            <code class="ruby">      when &#39;?&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="15">
+            
             
 
             
 
-            <code class="ruby">        puts &quot;you quit the game\n&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        break</code>
+            <code class="ruby">        get_help</code>
           </li>
         </div>
       
@@ -395,12 +395,45 @@
 
             
 
+            <code class="ruby">      when &#39;quit&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        puts &quot;you quit the game\n&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        break</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
             <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="17">
+          <li class="covered" data-hits="2" data-linenumber="20">
             <span class="hits">2</span>
             
 
@@ -411,7 +444,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -422,7 +455,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="19">
+          <li class="covered" data-hits="2" data-linenumber="22">
             <span class="hits">2</span>
             
 
@@ -433,7 +466,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
@@ -444,7 +477,128 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def get_help</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">    [&#39;This is a game of tic-tac-toe&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">    &#39;The first row is row 0 and the first column is column 0&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">    &#39;To input into the top left field, type: 0 0&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">    &#39;To input into the bottom right field, type: 2 2&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby">    &#39;Type quit to exit the game&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">    ].join(&quot;\n&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
             
             
 
@@ -2629,7 +2783,7 @@
 
             
 
-            <code class="ruby">        expect { app.run }.to output(&quot;you quit the game\ngame over\n&quot;).to_stdout</code>
+            <code class="ruby">        expect { app.run }.to output(&quot;type ? for help\nyou quit the game\ngame over\n&quot;).to_stdout</code>
           </li>
         </div>
       
@@ -2728,7 +2882,7 @@
 
             
 
-            <code class="ruby">        expect { app.run }.to output(&quot;game over\n&quot;).to_stdout</code>
+            <code class="ruby">        expect { app.run }.to output(&quot;type ? for help\ngame over\n&quot;).to_stdout</code>
           </li>
         </div>
       
