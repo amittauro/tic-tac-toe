@@ -20,9 +20,14 @@ TicTacToe
 
 Tests
 
-[[x,x,o],
-[x,o,x],
-[x,o,o]]
+TicTacToe Class:
+
+1. It returns true when player1 moves
+2. It returns true when player2 moves
+3. It returns true and doesnt make a move for false move
+4. It returns true and doesnt make a move if field take
+5. It returns false when game over
+6. It returns true when move made
 
 As a user,
 so that I can play a game of tic tac toe

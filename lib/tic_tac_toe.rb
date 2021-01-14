@@ -2,11 +2,16 @@ class TicTacToe
 
   attr_reader :board, :moves, :player1, :player2
 
-  def initialize(player1 = Player1.new, player2 = Player2.new)
+  def initialize(player1 = Player1.new, player2 = Player2.new, parser = Parser.new)
     @player1 = player1
     @player2 = player2
     @board = create_board
     @moves = 0
+    @parser = parser
+  end
+
+  def move(input)
+    player1move(row(input), column(input))
   end
 
   def player1move(row, column)
@@ -38,5 +43,13 @@ class TicTacToe
 
   def create_board
     Array.new(3, nil).map{ |row| Array.new(3, nil) }
+  end
+
+  def row(input)
+    input[0].to_i
+  end
+
+  def column(input)
+    input[2].to_i
   end
 end
