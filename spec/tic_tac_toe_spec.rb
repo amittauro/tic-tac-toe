@@ -33,6 +33,19 @@ describe TicTacToe do
       it 'returns true after moves are made' do
         expect(tic_tac_toe.move('1 1')).to eq(true)
       end
+
+      it 'doesnt move if field is taken' do
+        tic_tac_toe.move('1 1')
+        tic_tac_toe.move('1 1')
+        tic_tac_toe.move('0 0')
+        expect(tic_tac_toe.board).to eq(
+          [
+            ['o', nil, nil],
+            [nil, 'x', nil],
+            [nil, nil, nil]
+          ]
+        )
+      end
     end
 
     context 'when checking valid input' do

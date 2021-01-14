@@ -13,6 +13,9 @@ class TicTacToe
 
   def move(input)
     return true unless parser.valid?(input)
+
+    return true if field_taken?(input)
+
     if player == 1
       player1move(row(input), column(input))
       @player = 2
@@ -49,6 +52,10 @@ class TicTacToe
   end
 
   private
+
+  def field_taken?(input)
+    board[row(input)][column(input)] != nil
+  end
 
   def create_board
     Array.new(3, nil).map{ |row| Array.new(3, nil) }
