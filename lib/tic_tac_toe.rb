@@ -1,6 +1,6 @@
 class TicTacToe
 
-  attr_reader :board, :moves, :player1, :player2, :player
+  attr_reader :board, :moves, :player1, :player2, :player, :parser
 
   def initialize(player1 = Player1.new, player2 = Player2.new, parser = Parser.new)
     @player1 = player1
@@ -12,6 +12,7 @@ class TicTacToe
   end
 
   def move(input)
+    return true unless parser.valid?(input)
     if player == 1
       player1move(row(input), column(input))
       @player = 2
@@ -19,6 +20,7 @@ class TicTacToe
       player2move(row(input), column(input))
       @player = 1
     end
+    true
   end
 
   def player1move(row, column)
