@@ -46,6 +46,11 @@ describe TicTacToe do
           ]
         )
       end
+
+      it 'outputs error if field is taken' do
+        tic_tac_toe.move('1 1')
+        expect { tic_tac_toe.move('1 1') }.to output("field taken try again\n").to_stdout
+      end
     end
 
     context 'when checking valid input' do

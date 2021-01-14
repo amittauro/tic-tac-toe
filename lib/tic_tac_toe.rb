@@ -54,7 +54,10 @@ class TicTacToe
   private
 
   def field_taken?(input)
-    board[row(input)][column(input)] != nil
+    if board[row(input)][column(input)] != nil
+      puts 'field taken try again'
+      return true
+    end
   end
 
   def create_board
