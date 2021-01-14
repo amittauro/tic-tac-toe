@@ -51,6 +51,18 @@ describe TicTacToe do
         tic_tac_toe.move('1 1')
         expect { tic_tac_toe.move('1 1') }.to output("field taken try again\n").to_stdout
       end
+
+      it 'returns false if all fields are taken' do
+        tic_tac_toe.move('0 0')
+        tic_tac_toe.move('0 1')
+        tic_tac_toe.move('0 2')
+        tic_tac_toe.move('1 0')
+        tic_tac_toe.move('1 2')
+        tic_tac_toe.move('1 1')
+        tic_tac_toe.move('2 0')
+        tic_tac_toe.move('2 1')
+        expect(tic_tac_toe.move('2 2')).to eq(false)
+      end
     end
 
     context 'when checking valid input' do
