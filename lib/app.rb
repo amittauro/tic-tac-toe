@@ -7,6 +7,14 @@ class App
   end
 
   def run
+    while true
+      input = gets.chomp
+      case input
+      when 'quit'
+        puts "you quit the game\n"
+        break
+      end
+      tic_tac_toe.move(input)
+    end
   end
-
 end

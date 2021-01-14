@@ -28,32 +28,30 @@ class TicTacToe
     true
   end
 
+  private
+
   def player1move(row, column)
     @moves += 1
     board[row][column] = 'x'
-    board
   end
 
   def player2move(row, column)
     @moves += 1
     board[row][column] = 'o'
-    board
   end
 
-  def won
-    if player1.won?(board)
-      result = 'Player1 has won the game'
-    elsif player2.won?(board)
-      result = 'Player2 has won the game'
-    end
-    result
-  end
+  # def won
+  #   if player1.won?(board)
+  #     result = 'Player1 has won the game'
+  #   elsif player2.won?(board)
+  #     result = 'Player2 has won the game'
+  #   end
+  #   result
+  # end
 
   def over
     return 'the game is over' if moves == 9
   end
-
-  private
 
   def game_over?
     player1.won?(board) || player2.won?(board) || moves == 9
