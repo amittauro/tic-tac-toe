@@ -18,9 +18,8 @@ class App
       when 'quit'
         puts "you quit the game\n"
         break
-      when /[0-2] [0-2]/
-        break unless tic_tac_toe.move(input)
       end
+      break unless tic_tac_toe.move(input)
     end
     puts 'game over'
   end

@@ -13,21 +13,12 @@ class TicTacToe
   end
 
   def move(input)
-    return true if !parser.valid?(input)
+    return true if !parser.valid?(input) || field_taken?(input)
 
-    return true if field_taken?(input)
-
-    if player == 1
-      player1move(row(input), column(input))
-      @player = 2
-      show_board
-    else
-      player2move(row(input), column(input))
-      @player = 1
-      show_board
-    end
+    player_makes_move(input)
 
     return false if game_over?
+
     true
   end
 
@@ -37,21 +28,30 @@ class TicTacToe
 
   private
 
+  def player_makes_move(input)
+    if player == 1
+      player1move(row(input), column(input))
+      @player = 2
+    else
+      player2move(row(input), column(input))
+      @player = 1
+    end
+  end
+
   def player1move(row, column)
     @moves += 1
     board[row][column] = 'x'
+    show_board
   end
 
   def player2move(row, column)
     @moves += 1
     board[row][column] = 'o'
+    show_board
   end
 
   def all_fields_taken?
-    if moves == 9
-      puts 'all fields taken'
-      return true
-    end
+    moves == 9
   end
 
   def game_over?

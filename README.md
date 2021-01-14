@@ -16,27 +16,11 @@ The rules of tic-tac-toe are as follows:
 
 Build the business logic for a game of tic tac toe. It should be easy to implement a working game of tic tac toe by combining your code with any user interface, whether web or command line.
 
-TicTacToe
 
-Tests
+To run the app:
 
-TicTacToe Class:
-
-1. It returns true when player1 moves
-2. It returns true when player2 moves
-3. It returns true and doesnt make a move for false move
-4. It returns true and doesnt make a move if field take
-5. It returns false when game over
-6. It returns true when move made
-
-As a user,
-so that I can play a game of tic tac toe
-I want to be able to make a move as player1 (x)
-
-As a user,
-so that I can play a game of tic tac toe
-I want my opponent to be able to make a move as player2 (o)
-
-As a user,
-So that i can win a game of tic tac toe
-I want to know if i've won either with diagonal, row or column
+```
+$ git clone page
+$ bundle install
+$ ruby app_runner.rb
+```
