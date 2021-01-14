@@ -6,7 +6,8 @@ describe TicTacToe do
       let(:player1) { double('player1', won?: false) }
       let(:player2) { double('player2', won?: false) }
       let(:parser) { double('parser', valid?: true) }
-      let(:tic_tac_toe) { TicTacToe.new(player1, player2, parser) }
+      let(:view) { double('view', show: nil) }
+      let(:tic_tac_toe) { TicTacToe.new(player1, player2, parser, view) }
       it 'makes a move for player 1' do
         tic_tac_toe.move('0 0')
         expect(tic_tac_toe.board).to eq(
@@ -47,11 +48,6 @@ describe TicTacToe do
         )
       end
 
-      it 'outputs error if field is taken' do
-        tic_tac_toe.move('1 1')
-        expect { tic_tac_toe.move('1 1') }.to output("field taken try again\n").to_stdout
-      end
-
       it 'returns false if all fields are taken' do
         tic_tac_toe.move('0 0')
         tic_tac_toe.move('0 1')
@@ -69,7 +65,8 @@ describe TicTacToe do
       let(:player1) { double('player1', won?: false) }
       let(:player2) { double('player2', won?: false) }
       let(:parser) { double('parser') }
-      let(:tic_tac_toe) { TicTacToe.new(player1, player2, parser) }
+      let(:view) { double('view', show: nil) }
+      let(:tic_tac_toe) { TicTacToe.new(player1, player2, parser, view) }
       it 'doesnt move for invalid input' do
         allow(parser).to receive(:valid?).and_return(false)
         tic_tac_toe.move('4 4')
@@ -92,7 +89,8 @@ describe TicTacToe do
       let(:player1) { double('player1') }
       let(:player2) { double('player2') }
       let(:parser) { double('parser', valid?: true) }
-      let(:tic_tac_toe) { TicTacToe.new(player1, player2, parser) }
+      let(:view) { double('view', show: nil) }
+      let(:tic_tac_toe) { TicTacToe.new(player1, player2, parser, view) }
       it 'checks the game for player1 or player2 winning' do
         expect(player1).to receive(:won?).with(tic_tac_toe.board)
         expect(player2).to receive(:won?).with(tic_tac_toe.board)
@@ -110,6 +108,18 @@ describe TicTacToe do
         allow(player2).to receive(:won?).and_return(true)
         expect(tic_tac_toe.move('0 0')).to eq(false)
       end
+    end
+  end
+
+  describe '#show board' do
+    let(:player1) { double('player1') }
+    let(:player2) { double('player2') }
+    let(:parser) { double('parser', valid?: true) }
+    let(:view) { double('view') }
+    let(:tic_tac_toe) { TicTacToe.new(player1, player2, parser, view) }
+    it 'asks the view class to show board' do
+      expect(view).to receive(:show).with(tic_tac_toe.board)
+      tic_tac_toe.show_board
     end
   end
 end

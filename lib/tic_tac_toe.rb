@@ -1,31 +1,38 @@
 class TicTacToe
 
-  attr_reader :board, :moves, :player1, :player2, :player, :parser
+  attr_reader :board, :moves, :player1, :player2, :player, :parser, :view
 
-  def initialize(player1 = Player1.new, player2 = Player2.new, parser = Parser.new)
+  def initialize(player1 = Player1.new, player2 = Player2.new, parser = Parser.new, view = View.new)
     @player1 = player1
     @player2 = player2
     @board = create_board
     @moves = 0
     @parser = parser
     @player = 1
+    @view = view
   end
 
   def move(input)
-    return true unless parser.valid?(input)
+    return true if !parser.valid?(input)
 
     return true if field_taken?(input)
 
     if player == 1
       player1move(row(input), column(input))
       @player = 2
+      show_board
     else
       player2move(row(input), column(input))
       @player = 1
+      show_board
     end
 
     return false if game_over?
     true
+  end
+
+  def show_board
+    view.show(board)
   end
 
   private
@@ -40,28 +47,19 @@ class TicTacToe
     board[row][column] = 'o'
   end
 
-  # def won
-  #   if player1.won?(board)
-  #     result = 'Player1 has won the game'
-  #   elsif player2.won?(board)
-  #     result = 'Player2 has won the game'
-  #   end
-  #   result
-  # end
-
-  def over
-    return 'the game is over' if moves == 9
+  def all_fields_taken?
+    if moves == 9
+      puts 'all fields taken'
+      return true
+    end
   end
 
   def game_over?
-    player1.won?(board) || player2.won?(board) || moves == 9
+    player1.won?(board) || player2.won?(board) || all_fields_taken?
   end
 
   def field_taken?(input)
-    if board[row(input)][column(input)] != nil
-      puts 'field taken try again'
-      return true
-    end
+    board[row(input)][column(input)] != nil
   end
 
   def create_board
