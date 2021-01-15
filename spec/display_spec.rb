@@ -1,8 +1,8 @@
-require './lib/view'
+require './lib/display'
 
-describe View do
-  let(:view) { View.new }
-  describe '#show_board' do
+describe Display do
+  let(:display) { Display.new }
+  describe '#print' do
     context 'when viewing the board' do
       it 'returns the board' do
         board = [
@@ -10,7 +10,7 @@ describe View do
           [nil, nil, nil],
           [nil, nil, nil]
         ]
-        expect {view.show(board) }.to output(
+        expect {display.print(board) }.to output(
           "x| | \n | | \n | | \n"
         ).to_stdout
       end

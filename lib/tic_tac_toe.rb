@@ -1,72 +1,61 @@
 class TicTacToe
 
-  attr_reader :board, :moves, :player1, :player2, :player, :parser, :view
+  attr_reader :players, :board
 
-  def initialize(player1 = Player1.new, player2 = Player2.new, parser = Parser.new, view = View.new)
-    @player1 = player1
-    @player2 = player2
-    @board = create_board
-    @moves = 0
-    @parser = parser
-    @player = 1
-    @view = view
+  def initialize(players, board)
+    @players = players
+    @board = board
   end
 
-  def move(input)
-    return 'invalid input or field taken try again' if !parser.valid?(input) || field_taken?(input)
-
-    player_makes_move(input)
-  end
-
-  def game_over?
-    player1.won?(board) || player2.won?(board) || all_fields_taken?
-  end
-
-  def show_board
-    view.show(board)
+  def run
+    puts 'type ? for help'
+    while true
+      input = gets.chomp
+      case input
+      when '?'
+        get_help
+      when 'quit'
+        puts "you quit the game\n"
+        break
+      when /[0-2] [0-2]/
+        select_player(input)
+      end
+      break if over?
+    end
+    puts 'game over'
   end
 
   private
 
-  def player_makes_move(input)
-    if player == 1
-      player1move(row(input), column(input))
-      @player = 2
-    else
-      player2move(row(input), column(input))
-      @player = 1
+  def select_player(input)
+    if field_free?(input)
+      players[0].move(input)
+      players.reverse!
     end
   end
 
-  def player1move(row, column)
-    @moves += 1
-    board[row][column] = 'x'
-    show_board
-  end
-
-  def player2move(row, column)
-    @moves += 1
-    board[row][column] = 'o'
-    show_board
+  def over?
+    players[0].won? || players[1].won? || all_fields_taken?
   end
 
   def all_fields_taken?
-    moves == 9
+    board.flatten.all? { |field| field != nil }
   end
 
-  def field_taken?(input)
-    board[row(input)][column(input)] != nil
+  def field_free?(input)
+    row = input[0].to_i
+    column = input[2].to_i
+    board[row][column] == nil
   end
 
-  def create_board
-    Array.new(3, nil).map{ |row| Array.new(3, nil) }
-  end
-
-  def row(input)
-    input[0].to_i
-  end
-
-  def column(input)
-    input[2].to_i
+  def get_help
+    help = ['This is a game of tic-tac-toe',
+    'The first row is row 0 and the first column is column 0',
+    'To input into the top left field, type: 0 0',
+    'To input into the bottom right field, type: 2 2',
+    'Type quit to exit the game',
+    'Type show board to see the board at any point'
+    ].join("\n")
+    puts help
   end
 end

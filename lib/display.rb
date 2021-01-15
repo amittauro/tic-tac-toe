@@ -1,6 +1,6 @@
-class View
+class Display
 
-  def show(board)
+  def print(board)
     table = board.map do |row|
       row.map do |field|
         if field == nil
