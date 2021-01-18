@@ -54,7 +54,6 @@ class TicTacToe
     'To input into the top left field, type: 0 0',
     'To input into the bottom right field, type: 2 2',
     'Type quit to exit the game',
-    'Type show board to see the board at any point'
     ].join("\n")
     puts help
   end

@@ -16,28 +16,20 @@ class Player
   end
 
   def won?
-    any_column_won? || any_row_won? || any_diagonal_won?
+    rows_or_columns? || diagonals?
   end
 
   private
 
-  def any_column_won?
+  def rows_or_columns?
     won = false
-    3.times do |column|
-      won = true if column_won?(column)
+    3.times do |i|
+      won = true if row_won?(i) || column_won?(i)
     end
     won
   end
 
-  def any_row_won?
-    won = false
-    3.times do |row|
-      won = true if row_won?(row)
-    end
-    won
-  end
-
-  def any_diagonal_won?
+  def diagonals?
     (board[0][0] == marker and board[1][1] == marker and board[2][2]) == marker || (
       board[2][0] == marker and board[1][1] == marker and board[0][2] == marker)
   end

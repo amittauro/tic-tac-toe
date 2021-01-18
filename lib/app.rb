@@ -11,7 +11,6 @@ class App
     board = create_board
     player1 = player.new('x', board)
     player2 = player.new('o', board)
-    # puts "type ? for help"
     tic_tac_toe.new([player1, player2], board).run
   end
 

@@ -39,8 +39,8 @@ describe TicTacToe do
         board = [[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]]
         tic_tac_toe = TicTacToe.new([player1, player2], board)
         allow(tic_tac_toe).to receive(:gets).and_return('0 0', '1 1', 'quit')
-        expect(player1).to receive(:move).once
-        expect(player2).to receive(:move).once
+        expect(player1).to receive(:move).with('0 0')
+        expect(player2).to receive(:move).with('1 1')
         tic_tac_toe.run
       end
 
@@ -51,6 +51,7 @@ describe TicTacToe do
         tic_tac_toe = TicTacToe.new([player1, player2], board)
         allow(tic_tac_toe).to receive(:gets).and_return('0 0', 'quit')
         expect(player1).to_not receive(:move)
+        expect(player2).to_not receive(:move)
         tic_tac_toe.run
       end
     end
