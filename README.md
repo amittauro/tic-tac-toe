@@ -1,6 +1,6 @@
-# Try our Tic Tac Toe Tech Test!
+# Tic Tac Toe Tech Test
 
-This is a very common tech test as it demonstrates a candidate's knowledge of basic data structures.
+I worked my way through a command line app version of the tic tac toe tech test. The brief is given below.
 
 ## The brief
 
@@ -16,13 +16,21 @@ The rules of tic-tac-toe are as follows:
 
 Build the business logic for a game of tic tac toe. It should be easy to implement a working game of tic tac toe by combining your code with any user interface, whether web or command line.
 
-
-To run the app:
+## Running the app
 
 ```
-$ git clone page
+$ git clone
 $ bundle install
+$ bundle exec rspec
 $ ruby app_runner.rb
 ```
+
+## Project Considerations
+
+* See diagram below for modelling the app
+* Tested with rspec
+* Focus on OOD and TDD principles
+
+## Diagram
 
 ![Diagram](./diagram.png)
