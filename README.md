@@ -31,6 +31,13 @@ $ ruby app_runner.rb
 * Tested with rspec
 * Focus on OOD and TDD principles
 
+## Classes: Responsibilities
+
+* App: setting up the game by instantiating the players and  creating the board
+* TicTacToe: intialised with the players and the board. Runs the game via a while loop
+* Player: initialised with its marker and the board. Makes moves via user input and checks to see if it has won.
+* Display: console output of board
+
 ## Diagram
 
 ![Diagram](./diagram.png)
