@@ -25,4 +25,4 @@ $ bundle install
 $ ruby app_runner.rb
 ```
 
-![Diagram](https://i.imgur.com/x1sgwH0.png)
+![Diagram](./diagram.png)
