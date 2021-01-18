@@ -24,3 +24,5 @@ $ git clone page
 $ bundle install
 $ ruby app_runner.rb
 ```
+
+[Imgur](https://i.imgur.com/x1sgwH0.png)
