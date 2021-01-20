@@ -1,20 +1,21 @@
 class Display
 
   def print(board)
-    table = board.map do |row|
-      row.map do |field|
-        if field == nil
-          field = " "
-        else
-          field = field
-        end
-      end
+    print_rows(board)
+  end
+
+  private
+
+  def print_rows(board)
+    board.flatten.each_slice(3) do |row|
+      puts convert_empty_fields_to_strings(row).join("|")
     end
-    display = [
-      "#{table[0][0]}|#{table[0][1]}|#{table[0][2]}",
-      "#{table[1][0]}|#{table[1][1]}|#{table[1][2]}",
-      "#{table[2][0]}|#{table[2][1]}|#{table[2][2]}"
-    ].join("\n")
-    puts display
+  end
+
+  def convert_empty_fields_to_strings(row)
+    row.map do |field|
+      field = " " if !field
+      field
+    end
   end
 end
