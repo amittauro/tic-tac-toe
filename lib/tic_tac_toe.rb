@@ -1,14 +1,19 @@
 class TicTacToe
 
-  attr_reader :board, :marker
+  attr_reader :board, :marker, :players
 
-  def initialize(board)
-    @board = board
+  def initialize(player = Player)
+    @board = create_board
+    @players = [player.new('x', @board), player.new('o', @board)]
   end
 
-  def over?(marker)
-    @marker = marker
+  def over?(current_player)
+    @marker = current_player.marker
     rows_or_columns? || diagonals? || all_fields_taken?
+  end
+
+  def reverse_players
+    @players.reverse!
   end
 
   private
@@ -36,5 +41,9 @@ class TicTacToe
 
   def all_fields_taken?
     board.flatten.all? { |field| field != nil }
+  end
+
+  def create_board
+    Array.new(3, nil).map{ |row| Array.new(3, nil) }
   end
 end

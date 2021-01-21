@@ -1,10 +1,9 @@
 class App
 
-  attr_reader :tic_tac_toe, :display, :players
+  attr_reader :tic_tac_toe, :display
 
-  def initialize(setup = Setup.new, tic_tac_toe = TicTacToe, display = Display.new)
-    @players = setup.players
-    @tic_tac_toe = tic_tac_toe.new(setup.board)
+  def initialize(tic_tac_toe = TicTacToe.new, display = Display.new)
+    @tic_tac_toe = tic_tac_toe
     @display = display
   end
 
@@ -20,26 +19,23 @@ class App
         break
       when /[0-2] [0-2]/
         select_player(input)
+        display.print(tic_tac_toe.board)
       end
-      break if tic_tac_toe.over?(current_player.marker)
+      break if tic_tac_toe.over?(current_player)
     end
     display.over
   end
 
   private
 
-  def create_board
-    Array.new(3, nil).map{ |row| Array.new(3, nil) }
-  end
-
   def select_player(input)
-    if players[0].can_move?(input)
-      players[0].move(input)
-      players.reverse!
+    if tic_tac_toe.players[0].can_move?(input)
+      tic_tac_toe.players[0].move(input)
+      tic_tac_toe.reverse_players
     end
   end
 
   def current_player
-    players[1]
+    tic_tac_toe.players[1]
   end
 end
