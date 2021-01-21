@@ -1,55 +1,47 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Makers/individual_challenges/tic-tac-toe/spec/display_spec.rb": {
+      "/Users/student/Makers/individual_challenges/tic-tac-toe/spec/setup_spec.rb": {
         "lines": [
           1,
           null,
           1,
+          1,
           2,
           1,
           1,
           1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          2,
-          null,
-          null,
-          null,
           null,
           null,
           null
         ]
       },
-      "/Users/student/Makers/individual_challenges/tic-tac-toe/lib/display.rb": {
+      "/Users/student/Makers/individual_challenges/tic-tac-toe/lib/setup.rb": {
         "lines": [
           1,
           null,
           1,
           1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
-          null,
-          1,
-          1,
-          3,
-          null,
+          4,
           null,
           null,
           1,
-          3,
-          9,
-          9,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1611164746
+    "timestamp": 1611168946
   }
 }

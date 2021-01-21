@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-20T17:45:46+00:00">2021-01-20T17:45:46+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-20T18:55:46+00:00">2021-01-20T18:55:46+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.16
+         1.19
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>19</b> relevant lines,
-    <span class="green"><b>19</b> lines covered</span> and
+    <b>21</b> relevant lines,
+    <span class="green"><b>21</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -71,24 +71,24 @@
       <tbody>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#4afd6733056ccd229cc6e01f42e4b5c884abcc7d" class="src_link" title="lib/display.rb">lib/display.rb</a></td>
+            <td class="strong t-file__name"><a href="#5d30a632388a7b332a158923c2fe60a7085d485f" class="src_link" title="lib/setup.rb">lib/setup.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">21</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">11</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">14</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.82</td>
+            <td class="cell--number">1.21</td>
             
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#31979e8f61a1dbf89f3c871e05829fe3cc444ef2" class="src_link" title="spec/display_spec.rb">spec/display_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#c97eda61ce697ccc23c3baec322c23d09984d200" class="src_link" title="spec/setup_spec.rb">spec/setup_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.25</td>
+            <td class="cell--number">1.14</td>
             
           </tr>
         
@@ -109,9 +109,9 @@
 
       <div class="source_files">
       
-        <div class="source_table" id="4afd6733056ccd229cc6e01f42e4b5c884abcc7d">
+        <div class="source_table" id="5d30a632388a7b332a158923c2fe60a7085d485f">
   <div class="header">
-    <h3>lib/display.rb</h3>
+    <h3>lib/setup.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -123,8 +123,8 @@
     
 
     <div class="t-line-summary">
-      <b>11</b> relevant lines.
-      <span class="green"><b>11</b> lines covered</span> and
+      <b>14</b> relevant lines.
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -142,7 +142,7 @@
 
             
 
-            <code class="ruby">class Display</code>
+            <code class="ruby">class Setup</code>
           </li>
         </div>
       
@@ -164,7 +164,7 @@
 
             
 
-            <code class="ruby">  def print(board)</code>
+            <code class="ruby">  attr_reader :player, :players, :board</code>
           </li>
         </div>
       
@@ -175,29 +175,29 @@
 
             
 
-            <code class="ruby">    print_rows(board)</code>
+            <code class="ruby">  def initialize(player = Player)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    @player = player</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    @board = create_board</code>
           </li>
         </div>
       
@@ -208,7 +208,7 @@
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">    @players = create_players</code>
           </li>
         </div>
       
@@ -219,18 +219,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="9">
+            
             
 
             
 
-            <code class="ruby">  def print_rows(board)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -241,18 +241,18 @@
 
             
 
-            <code class="ruby">    board.flatten.each_slice(3) do |row|</code>
+            <code class="ruby">  def create_board</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="11">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="4" data-linenumber="11">
+            <span class="hits">4</span>
             
 
             
 
-            <code class="ruby">      puts convert_empty_fields_to_strings(row).join(&quot;|&quot;)</code>
+            <code class="ruby">    Array.new(3, nil).map{ |row| Array.new(3, nil) }</code>
           </li>
         </div>
       
@@ -263,7 +263,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -274,18 +274,18 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  def create_players</code>
           </li>
         </div>
       
@@ -296,51 +296,51 @@
 
             
 
-            <code class="ruby">  def convert_empty_fields_to_strings(row)</code>
+            <code class="ruby">    player1 = player.new(&#39;x&#39;, board)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="16">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    row.map do |field|</code>
+            <code class="ruby">    player2 = player.new(&#39;o&#39;, board)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="17">
-            <span class="hits">9</span>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      field = &quot; &quot; if !field</code>
+            <code class="ruby">    players = [player1, player2]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="18">
-            <span class="hits">9</span>
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      field</code>
+            <code class="ruby">    p players</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">    players</code>
           </li>
         </div>
       
@@ -371,9 +371,9 @@
 </div>
 
       
-        <div class="source_table" id="31979e8f61a1dbf89f3c871e05829fe3cc444ef2">
+        <div class="source_table" id="c97eda61ce697ccc23c3baec322c23d09984d200">
   <div class="header">
-    <h3>spec/display_spec.rb</h3>
+    <h3>spec/setup_spec.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -385,8 +385,8 @@
     
 
     <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>7</b> relevant lines.
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -404,7 +404,7 @@
 
             
 
-            <code class="ruby">require &#39;./lib/display&#39;</code>
+            <code class="ruby">require &#39;./lib/setup&#39;</code>
           </li>
         </div>
       
@@ -426,29 +426,29 @@
 
             
 
-            <code class="ruby">describe Display do</code>
+            <code class="ruby">describe Setup do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="4">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">  let(:display) { Display.new }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
+          <li class="covered" data-hits="1" data-linenumber="4">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  describe &#39;#print&#39; do</code>
+            <code class="ruby">  describe &#39;#players&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="5">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    let(:player) { double(&#39;player&#39;, new: &#39;new player&#39;) }</code>
           </li>
         </div>
       
@@ -459,7 +459,7 @@
 
             
 
-            <code class="ruby">    context &#39;when viewing the board&#39; do</code>
+            <code class="ruby">    it &#39;returns an array of players&#39; do</code>
           </li>
         </div>
       
@@ -470,111 +470,23 @@
 
             
 
-            <code class="ruby">      it &#39;returns the board&#39; do</code>
+            <code class="ruby">      setup = Setup.new(player)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby">        board = [</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
+          <li class="covered" data-hits="1" data-linenumber="8">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">          [&#39;x&#39;, nil, nil],</code>
+            <code class="ruby">      expect(setup.players).to eq([&#39;new player&#39;, &#39;new player&#39;])</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
-            
-            
-
-            
-
-            <code class="ruby">          [nil, nil, nil],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">          [nil, nil, nil]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">        ]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="13">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">        expect {display.print(board) }.to output(</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">          &quot;x| | \n | | \n | | \n&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">        ).to_stdout</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
@@ -585,7 +497,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -596,7 +508,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
