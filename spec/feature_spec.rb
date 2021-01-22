@@ -3,6 +3,7 @@ require './lib/player'
 require './lib/tic_tac_toe'
 require './lib/display'
 require './lib/players'
+require './lib/board'
 
 describe 'feature' do
   let(:app) { App.new }
