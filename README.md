@@ -33,4 +33,4 @@ $ ruby app_runner.rb
 
 ## Diagram
 
-![Diagram](./diagram.png)
+![Diagram](https://i.imgur.com/IXPJ2nI.png)
