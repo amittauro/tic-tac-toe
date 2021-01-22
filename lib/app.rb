@@ -1,43 +1,44 @@
 class App
 
-  attr_reader :player1, :player2, :tic_tac_toe
-
-  def initialize(player1 = Player1.new, player2 = Player2.new, tic_tac_toe = TicTacToe.new)
-    @player1 = player1
-    @player2 = player2
+  attr_reader :display
+  def initialize(tic_tac_toe = TicTacToe.new, display = Display.new, players = Players.new)
     @tic_tac_toe = tic_tac_toe
+    @display = display
+    @players = players
   end
 
   def run
-    input = nil
-    players = [1, 2]
-    while input != 'quit'
-      player = players[0]
+    display.ask_for_help
+    while true
       input = gets.chomp
-      if input == 'quit'
+      case input
+      when '?'
+        display.get_help
+      when 'quit'
         break
+      when /[0-2] [0-2]/
+        next unless field_free?(input)
+        move_and_switch_players(input)
       end
-      if player1.won?
-        puts 'player1 has won the game'
-        break
-      end
-      if player == 1
-        tic_tac_toe.player1move(row(input), column(input))
-      else
-        tic_tac_toe.player2move(row(input), column(input))
-      end
-      players.reverse!
+      break if game_over?
     end
+    display.over
   end
 
   private
 
-  def row(input)
-    input[0].to_i
+  attr_reader :players, :tic_tac_toe
+
+  def move_and_switch_players(input)
+    tic_tac_toe.move(input, players.current_player_marker)
+    players.reverse_players
   end
 
-  def column(input)
-    input[2].to_i
+  def field_free?(input)
+    tic_tac_toe.field_free?(input)
   end
 
+  def game_over?
+    tic_tac_toe.over?(players.who_just_moved_marker)
+  end
 end
