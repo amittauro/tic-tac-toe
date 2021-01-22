@@ -31,19 +31,6 @@ $ ruby app_runner.rb
 * Tested with rspec
 * Focus on OOD and TDD principles
 
-## Classes: Responsibilities
-
-* App: setting up the game by instantiating the players and  creating the board
-* TicTacToe: intialised with the players and the board. Runs the game via a while loop
-* Player: initialised with its marker and the board. Makes moves via user input and checks to see if it has won.
-* Display: console output of board
-
 ## Diagram
 
 ![Diagram](./diagram.png)
-
-
-SRP: Display shows single responsibility principle: its only responsible for console outputting a nested array. However unsure about player as its responsible for both moving and checking to see if its won?
-open closed principle: i don’t think any of my classes show this as all would have to be modified to add new functionality. Not too sure how you go about implementing this one.
-Liskov substituion principle: I’m assuming this is about inheritance. Not applied and can’t see where inheritance could be applied.
-Interface segregation: classes are quite separated. You could change player and wouldnt have to change another class. I believe this applies to all of them.
