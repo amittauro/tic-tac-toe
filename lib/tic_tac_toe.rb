@@ -5,16 +5,24 @@ class TicTacToe
     @players = players
   end
 
-  def move_and_switch_players(input)
-    @board.move(input, @players.current_player_marker)
-    @players.reverse_players
-  end
-
-  def field_free?(input)
-    @board.field_free?(input)
+  def play(input)
+    move_and_switch_players(input) if field_free?(input)
   end
 
   def game_over?
-    @board.over?(@players.who_just_moved_marker)
+    @board.over?(@players.get_marker(1))
+  end
+
+  private
+
+  attr_reader :board, :players
+
+  def move_and_switch_players(input)
+    board.move(input, players.get_marker(0))
+    players.reverse_players
+  end
+
+  def field_free?(input)
+    board.field_free?(input)
   end
 end

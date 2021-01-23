@@ -16,11 +16,12 @@ class App
       when 'quit'
         break
       when /[0-2] [0-2]/
-        next unless @tic_tac_toe.field_free?(input)
-        @tic_tac_toe.move_and_switch_players(input)
+        @tic_tac_toe.play(input)
       end
       break if @tic_tac_toe.game_over?
     end
     display.over
   end
 end
+
+#discuss tic tac toe class acting as interface. imterface segregaryon - too mnay piblic methods??

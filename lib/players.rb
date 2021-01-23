@@ -8,11 +8,7 @@ class Players
     @players.reverse!
   end
 
-  def current_player_marker
-    @players[0].marker
-  end
-
-  def who_just_moved_marker
-    @players[1].marker
+  def get_marker(player)
+    @players[player].marker
   end
 end
