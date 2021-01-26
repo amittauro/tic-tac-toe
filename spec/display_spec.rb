@@ -10,7 +10,7 @@ describe Display do
           [nil, nil, nil],
           [nil, nil, nil]
         ]
-        expect {display.print(board) }.to output(
+        expect { display.print(board) }.to output(
           "x| | \n | | \n | | \n"
         ).to_stdout
       end

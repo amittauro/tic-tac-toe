@@ -1,18 +1,16 @@
 class App
 
-  attr_reader :display
-  def initialize(tic_tac_toe = TicTacToe.new, display = Display.new)
+  def initialize(tic_tac_toe = TicTacToe.new)
     @tic_tac_toe = tic_tac_toe
-    @display = display
   end
 
   def run
-    display.ask_for_help
+    puts "type ? for help"
     while true
       input = gets.chomp
       case input
       when '?'
-        display.get_help
+        get_help
       when 'quit'
         break
       when /[0-2] [0-2]/
@@ -20,8 +18,18 @@ class App
       end
       break if @tic_tac_toe.over?
     end
-    display.over
+    puts "game over"
+  end
+
+  private
+
+  def get_help
+    help = ['This is a game of tic-tac-toe',
+    'The first row is row 0 and the first column is column 0',
+    'To input into the top left field, type: 0 0',
+    'To input into the bottom right field, type: 2 2',
+    'Type quit to exit the game',
+    ].join("\n")
+    puts help
   end
 end
-
-#discuss tic tac toe class acting as interface. imterface segregaryon - too mnay piblic methods??

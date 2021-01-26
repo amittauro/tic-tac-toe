@@ -3,13 +3,11 @@ class Board
   def initialize(display = Display.new)
     @board = create_board
     @display = display
-    @markers = ['x', 'o']
   end
 
   def move(input, marker)
-    update_board(input, @markers[0])
+    update_board(input, marker)
     @display.print(board_copy)
-    @markers.reverse!
     @board
   end
 
