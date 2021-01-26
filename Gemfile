@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-# gem "rails"
-
-gem "rspec", "~> 3.10"
-
-gem 'rubocop', require: false
-
-gem 'simplecov', require: false, group: :test
-
-gem "pry", "~> 0.13.1"
+group :test do
+  gem 'pry', '~> 0.13.1'
+  gem 'rspec', '~> 3.10'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'simplecov', require: false, group: :test
+end

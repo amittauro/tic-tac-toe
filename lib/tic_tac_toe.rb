@@ -1,8 +1,10 @@
-class TicTacToe
+# frozen_string_literal: true
 
+# Class for switching players and getting player to move on board
+class TicTacToe
   def initialize(board = Board.new)
     @board = board
-    @markers = ['x', 'o']
+    @markers = %w[x o]
   end
 
   def play(input)

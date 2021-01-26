@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require './lib/display'
 
 describe Display do
-  let(:display) { Display.new }
+  let(:display) { described_class.new }
+
   describe '#print' do
     context 'when viewing the board' do
       it 'returns the board' do
