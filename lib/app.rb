@@ -18,7 +18,7 @@ class App
       when /[0-2] [0-2]/
         @tic_tac_toe.play(input)
       end
-      break if @tic_tac_toe.game_over?
+      break if @tic_tac_toe.over?
     end
     display.over
   end

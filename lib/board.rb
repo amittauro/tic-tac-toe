@@ -3,11 +3,14 @@ class Board
   def initialize(display = Display.new)
     @board = create_board
     @display = display
+    @markers = ['x', 'o']
   end
 
   def move(input, marker)
-    update_board(input, marker)
-    @display.print(@board)
+    update_board(input, @markers[0])
+    @display.print(board_copy)
+    @markers.reverse!
+    @board
   end
 
   def field_free?(input)
@@ -21,6 +24,10 @@ class Board
   private
 
   attr_reader :board
+
+  def board_copy
+    board.clone
+  end
 
   def x(input)
     input[0].to_i

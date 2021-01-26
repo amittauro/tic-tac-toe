@@ -1,8 +1,7 @@
 require './lib/app'
-require './lib/player'
 require './lib/tic_tac_toe'
 require './lib/display'
-require './lib/players'
+require './lib/markers'
 require './lib/board'
 
 describe 'feature' do

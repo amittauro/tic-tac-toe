@@ -1,25 +1,25 @@
 class TicTacToe
 
-  def initialize(board = Board.new, players = Players.new)
+  def initialize(board = Board.new, markers = Markers.new)
     @board = board
-    @players = players
+    @markers = markers
   end
 
   def play(input)
     move_and_switch_players(input) if field_free?(input)
   end
 
-  def game_over?
-    @board.over?(@players.get_marker(1))
+  def over?
+    @board.over?(@markers.who_just_moved)
   end
 
   private
 
-  attr_reader :board, :players
+  attr_reader :board, :markers
 
   def move_and_switch_players(input)
-    board.move(input, players.get_marker(0))
-    players.reverse_players
+    board.move(input, markers.current_marker)
+    markers.reverse
   end
 
   def field_free?(input)
