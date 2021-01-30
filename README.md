@@ -1,36 +1,31 @@
-# Tic Tac Toe Tech Test
+# Tic Tac Toe
 
-I worked my way through a command line app version of the tic tac toe tech test. The brief is given below.
+This is a command line version of tic tac toe built with Ruby.
 
-## The brief
+The project focuses on OOD and TDD principles.
 
-The rules of tic-tac-toe are as follows:
+## Get Started
 
-* There are two players in the game (X and O)
-* Players take turns until the game is over
-* A player can claim a field if it is not already taken
-* A turn ends when a player claims a field
-* A player wins if they claim all the fields in a row, column or diagonal
-* A game is over if a player wins
-* A game is over when all fields are taken
-
-Build the business logic for a game of tic tac toe. It should be easy to implement a working game of tic tac toe by combining your code with any user interface, whether web or command line.
-
-## Running the app
-
-```
-$ git clone
-$ bundle install
-$ bundle exec rspec
-$ ruby app_runner.rb
+```sh
+git clone && cd tic-tac-toe
+bundle install
+ruby app_runner.rb
 ```
 
-## Project Considerations
+## Testing
 
-* See diagram below for modelling the app
-* Tested with rspec
-* Focus on OOD and TDD principles
+To run tests:
+```sh
+bundle exec rspec
+```
 
-## Diagram
+Additionally, when rspec is run, simplecov will calculate test coverage, which you can view with:
 
-![Diagram](https://i.imgur.com/IXPJ2nI.png)
+```sh
+open coverage/index.html
+```
+
+For code quality:
+```sh
+bundle exec rubocop
+```

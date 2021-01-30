@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 require './lib/app'
-require './lib/player'
 require './lib/tic_tac_toe'
 require './lib/display'
-require './lib/players'
 require './lib/board'
 
 describe 'feature' do
   let(:app) { App.new }
+
   context 'when running the app' do
     it 'asks for help' do
       allow(app).to receive(:gets).and_return('quit')
@@ -30,11 +31,6 @@ describe 'feature' do
 
     it 'ends game when a player wins on row 2' do
       allow(app).to receive(:gets).and_return('1 0', '0 1', '1 1', '0 2', '1 2')
-      expect { app.run }.to output(/game over/).to_stdout
-    end
-
-    it 'ends game when a player wins on row 3' do
-      allow(app).to receive(:gets).and_return('2 0', '1 1', '2 1', '1 2', '2 2')
       expect { app.run }.to output(/game over/).to_stdout
     end
 
